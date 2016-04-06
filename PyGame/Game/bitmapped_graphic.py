@@ -14,7 +14,7 @@ pygame.display.set_caption('My game')
 done = True
 clock = pygame.time.Clock()
 
-click_sound = pygame.mixer.Sound("mouseclick.mp3")
+
 background_image = pygame.image.load("saturn_family1.jpg").convert()
 player_image = pygame.image.load("player.png").convert()
 player_image.set_colorkey(black)
@@ -28,8 +28,7 @@ while done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = False
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            click_sound.play()
+
 
     screen.blit(background_image, [0,0])
     pygame.mouse.set_visible(0)
