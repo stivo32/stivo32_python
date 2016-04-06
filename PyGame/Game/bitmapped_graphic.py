@@ -17,6 +17,7 @@ clock = pygame.time.Clock()
 
 background_image = pygame.image.load("saturn_family1.jpg").convert()
 player_image = pygame.image.load("player.png").convert()
+#сделать черный цвет прозрачным для данного изображения
 player_image.set_colorkey(black)
 x_speed = 0
 y_speed = 0
