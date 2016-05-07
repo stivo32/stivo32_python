@@ -243,14 +243,14 @@ while not done:
 
     grid = step(grid)
 
-    screen.fill(black)
+    screen.fill(white)
     for row in range(len(grid)):
         for column in range(len(grid[row])):
             if grid[row][column] == 1:
                 color = blue
             else:
                 color = white
-            pygame.draw.rect(screen, color, [column*(width), row*(height), width, height], 0)
+            pygame.draw.ellipse(screen, color, [column*(width), row*(height), width, height], 0)
 
     pygame.display.flip()
 
