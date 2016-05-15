@@ -12,7 +12,7 @@ descr_1+= 'Какое направление выбрать?'
 room_1 = [descr_1, 4, 2, 0, None]
 
 descr_2 = 'Вы находитесь в столовой.\n'
-descr_2+= 'В комнате две двери - на западе и на севере комнаты.\n'
+descr_2+= 'В комнате две двери - на западе и на севере комнаты.\n' \
 descr_2+= 'Какое направление выбрать?'
 room_2 = [descr_2, 5, None, None, 1]
 
@@ -56,31 +56,31 @@ while not done:
             current_room = room_list[current_room[1]]
             continue
         else:
-            print('Вы не можете пойти в этом направлении')
+            print('Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РїРѕР№С‚Рё РІ СЌС‚РѕРј РЅР°РїСЂР°РІР»РµРЅРёРё')
             continue
     elif answer == 'e':
         if current_room[2] is not None:
             current_room = room_list[current_room[2]]
             continue
         else:
-            print('Вы не можете пойти в этом направлении')
+            print('Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РїРѕР№С‚Рё РІ СЌС‚РѕРј РЅР°РїСЂР°РІР»РµРЅРёРё')
             continue
     elif answer == 's':
         if current_room[3] is not None:
             current_room = room_list[current_room[3]]
             continue
         else:
-            print('Вы не можете пойти в этом направлении')
+            print('Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РїРѕР№С‚Рё РІ СЌС‚РѕРј РЅР°РїСЂР°РІР»РµРЅРёРё')
             continue
     elif answer == 'w':
         if current_room[4] is not None:
             current_room = room_list[current_room[4]]
             continue
         else:
-            print('Вы не можете пойти в этом направлении')
+            print('Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РїРѕР№С‚Рё РІ СЌС‚РѕРј РЅР°РїСЂР°РІР»РµРЅРёРё')
             continue
     elif answer == 'q':
         done = True
-        print('Выход из игры')
+        print('Р’С‹С…РѕРґ РёР· РёРіСЂС‹')
     else:
-        print('Невалидный ввод. Выбирайте направление из n, e, s, w')
+        print('РќРµРІР°Р»РёРґРЅС‹Р№ РІРІРѕРґ. Р’С‹Р±РёСЂР°Р№С‚Рµ РЅР°РїСЂР°РІР»РµРЅРёРµ РёР· n, e, s, w')
