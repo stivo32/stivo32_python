@@ -56,7 +56,7 @@ while not done:
             current_room = room_list[current_room[1]]
             continue
         else:
-            print('С этой стороны нету двери. Выберите другое направление.')
+            print('С этой стороны нету двери. Выберите другое направление..')
             continue
     elif answer == 'e':
         if current_room[2] is not None:
