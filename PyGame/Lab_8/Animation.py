@@ -1,6 +1,7 @@
 __author__ = 'k_eryomenko'
 import pygame
 import random
+import math
 black = (   0,   0,   0)
 white = ( 255, 255, 255)
 green = (   0, 255,   0)
@@ -32,6 +33,35 @@ def solarDraw(hour):
     print(x,y)
     pygame.draw.circle(screen, YELLOW, (int(x), int(y)) , 20)
 
+def person(deg):
+    alfa = 0
+    head_x = 150
+    head_y = 100
+    scale = 0.5
+    head_radius = int(20*scale)
+    body_start_y = int(head_y+head_radius)
+    body_end_y = int(body_start_y + 100*scale)
+    leg_left_end_x = int(head_x-20*scale)
+    leg_right_end_x = int(head_x+20*scale)
+    leg_end_y = int(body_end_y+120*scale)
+    hand_start_y = int(body_start_y+20*scale)
+    hand_length = int(90*scale)
+    #draw head
+    pygame.draw.circle(screen, white, (head_x, head_y), head_radius, 4)
+    #draw body
+    pygame.draw.line(screen, white, (head_x, body_start_y), (head_x, body_end_y) , 4)
+    #draw left leg
+    pygame.draw.line(screen, white, (head_x, body_end_y), (leg_left_end_x, leg_end_y), 4)
+    #draw right leg
+    pygame.draw.line(screen, white, (head_x, body_end_y), (leg_right_end_x, leg_end_y), 4)
+    if deg<30:
+        alfa = (60-deg*4)*math.pi/180
+    else:
+        alfa = (-180+deg*4)*math.pi/180
+    pygame.draw.line(screen, white, (head_x, hand_start_y), (head_x-hand_length*math.cos(alfa), hand_start_y+hand_length*math.sin(alfa)), 4)
+    pygame.draw.line(screen, white, (head_x, hand_start_y), (head_x+hand_length*math.cos(alfa), hand_start_y+hand_length*math.sin(alfa)), 4)
+
+
 
 pygame.init()
 
@@ -44,6 +74,7 @@ done = False
 color = black
 clock = pygame.time.Clock()
 hour=0
+deg=0
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -51,12 +82,16 @@ while not done:
 
     screen.fill(color)
     color = skyColor(hour)
+    person(deg)
     pygame.display.flip()
 
     clock.tick(5)
     hour+=1
     if hour==96:
         hour=0
+    deg+=1
+    if deg==60:
+        deg=0
 pygame.quit()
 
 
